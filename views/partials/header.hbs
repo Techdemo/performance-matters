@@ -1,19 +1,15 @@
 <header>
     <h1>Oba sheet music</h1>
-    <button class="sideNavButton" id="sideNavButton">Library</button>
-    <nav>
+        <nav>
         <ul>
             <li><a href="">Saved Sheets(3)</a></li>
             <li><a href="">Playlists</a></li>
             <li><a href="">Search Sheets</a></li>
         </ul>
     </nav>
-    <form>
-        <input type="text">
-        <section class="buttonGroup">
-            <button class="submitButton" id="submit">submit</button>
-            <button classs="filterButton" id="filterButton">Filter</button>
-        </section>
+    <form action="/search" method="post">
+        <input type="text" name="value" id="value" >
+        <button class="submitButton" type="submit">Verstuur je antwoord</button>
     </form>
 
 </header>

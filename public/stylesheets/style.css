@@ -2,7 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-/* css reset */
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -124,7 +124,7 @@ h3 {
   color: var(--marine);
 }
 h4 {
-  font-size: 2vh;
+  font-size: 3vh;
   color: var(--marine);
 }
 p {
@@ -163,9 +163,8 @@ main{
 }
 
 .listItem {
-  display: flex;
-  flex-direction: column;
-  padding: 1em;
+  display: grid;
+  grid-template-columns: 25% auto;
   border: 2px var(--lightBlue);
   box-shadow: 0 0 8px  rgba(0,0,0,0.1),
             0 0 16px rgba(0,0,0,0.1);
@@ -180,6 +179,18 @@ main{
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
   cursor: pointer;
+}
+.listItemImage {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+.listItemContent {
+  padding: 2em 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: flex-end;
 }
 @keyframes fadeIn {
   0% {
@@ -377,10 +388,12 @@ footer button {
                 0 0 16px rgba(0,0,0,0.1);
   margin: 2em;
 }
+
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .active, .accordion:hover {
   background-color:var(--red);
 }
+
 /* Style the accordion panel. Note: hidden by default */
 .panel {
   padding: 0 18px;

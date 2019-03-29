@@ -3,15 +3,28 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "nodemon ./bin/www",
+    "minify": "gulp min-js & gulp min-css"
   },
   "dependencies": {
+    "body-parser": "^1.18.3",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.16.0",
+    "gulp-concat": "^2.6.1",
     "hbs": "~4.0.1",
     "http-errors": "~1.6.2",
     "morgan": "~1.9.0",
     "nodemon": "^1.18.10"
+  },
+  "devDependencies": {
+    "compression": "^1.7.4",
+    "cssnano": "^4.1.10",
+    "gulp": "^4.0.0",
+    "gulp-clean-css": "^4.0.0",
+    "gulp-pipeline": "^4.0.43",
+    "gulp-rename": "^1.4.0",
+    "gulp-uglify": "^3.0.2",
+    "lodash": "^4.17.11"
   }
 }

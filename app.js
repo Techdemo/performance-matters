@@ -1,12 +1,15 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var hbs = require('hbs');
-var indexRouter = require('./routes/index');
-var searchRouter = require('./routes/search')
-var loadJSON = require('./public/javascripts/api.js');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const hbs = require('hbs');
+const indexRouter = require('./routes/index');
+const searchRouter = require('./routes/search')
+const searchData = require('./controllers/searchData.js')
+const loadJSON = require('./controllers/api.js');
+const compression = require('compression');
+const bodyParser = require('body-parser');
 
 var app = express();
 
@@ -14,14 +17,23 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 hbs.registerPartials(__dirname + '/views/partials');
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(compression())
+app.use((req, res, next) => {
+  res.setHeader('Cache-Control', 'max-age=' + 365 * 24 * 60 * 60);
+  next();
+  });
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 app.get('/', indexRouter);
+app.post('/search', searchRouter);
 app.get('/search', searchRouter);
 
 
