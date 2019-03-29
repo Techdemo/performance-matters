@@ -1,6 +1,6 @@
 # Performance matters
 
-##De doelen van dit vak:
+## De doelen van dit vak:
 - in aanraking komen met optimalisaites die kunnen worden uitegevoerd op een web app.
 - Uitleg over hoe de optimalisatie technieken precies werken.
 - Wat zijn service workers en hoe werken deze.
@@ -89,14 +89,14 @@ In mijn client js stond bijna niks. Dus in file size zul je het verschil daarin 
 
 ### CSS
 Before:
-![alt text](assets/without css compression.png "without css compression")
+![alt text](https://raw.githubusercontent.com/Techdemo/performance-matters/master/assets/without%20css%20compression.png)
 
 after:
-![alt text](assets/with css compression.png "with css compression")
+![alt text](https://raw.githubusercontent.com/Techdemo/performance-matters/master/assets/with%20css%20compression.png)
 
 ### compression
 Before:
-![alt text](assets/without css compression.png "without css compression")
+![alt text](https://raw.githubusercontent.com/Techdemo/performance-matters/master/assets/without%20compression.png)
 
 after:
-![alt text](assets/with css compression.png "with css compression")
+![alt text](https://raw.githubusercontent.com/Techdemo/performance-matters/master/assets/with%20compression.png)
